@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+            <!-- 합쳐지고 최소화된 최신 CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+            
+            <!-- 부가적인 테마 -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+            
+            <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+            <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1><b>Word Count Web Page</b></h1> <br>
+        <ul class="nav nav-pills">
+                <li role="presentation"><a href="{%url 'index'%}">Try Again?</a></li>
+                <li role="presentation"><a href="{%url 'about'%}">About</a></li>
+        </ul>
+        <br>
+
+    
+        <h3><b>입력한 텍스트는 총 {{total}} 단어로 구성되어 있습니다.</b> </h3>
+        {% for word, howmany in dictionary%}
+        {{word}} : {{howmany}}<br>
+        {%endfor%}
+
+        <br>
+
+        <h3> <b>입력한 텍스트를 확인하세요 :</b> </h3>
+        {{full}}
+
+        
+    </div>
+
+
+</body>
+</html>
